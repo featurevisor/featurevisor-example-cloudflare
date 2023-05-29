@@ -50,6 +50,6 @@ jobs:
         run: |
           git add .featurevisor/*
           git commit --amend --no-edit
-          git push origin main
+          git push
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
