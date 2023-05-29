@@ -51,5 +51,3 @@ jobs:
           git add .featurevisor/*
           git commit --amend --no-edit
           git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
