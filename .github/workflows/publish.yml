@@ -38,8 +38,8 @@ jobs:
       - name: Test specs
         run: npm test
 
-      # - name: Upload to Cloudflare Pages
-      #   run: CLOUDFLARE_ACCOUNT_ID=$CLOUDFLARE_ACCOUNT_ID npx wrangler pages publish dist --project-name="featurevisor-example-cloudflare"
+      - name: Upload to Cloudflare Pages
+        run: npx wrangler pages publish dist --project-name="featurevisor-example-cloudflare"
 
       # - name: Push back to origin
       #   run: |
