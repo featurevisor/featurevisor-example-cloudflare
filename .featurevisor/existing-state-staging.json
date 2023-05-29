@@ -1,0 +1,32 @@
+{
+  "features": {
+    "baz": {
+      "variations": [
+        {
+          "value": true,
+          "weight": 100
+        },
+        {
+          "value": false,
+          "weight": 0
+        }
+      ],
+      "traffic": [
+        {
+          "key": "1",
+          "percentage": 100000,
+          "allocation": [
+            {
+              "variation": true,
+              "percentage": 100000,
+              "range": [
+                0,
+                100000
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
