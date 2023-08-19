@@ -8,6 +8,15 @@
           "allocation": []
         }
       ]
+    },
+    "my_feature": {
+      "traffic": [
+        {
+          "key": "1",
+          "percentage": 100000,
+          "allocation": []
+        }
+      ]
     }
   }
 }
