@@ -1,7 +1,7 @@
 {
   "name": "@featurevisor/example-cloudflare",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "For testing only",
   "scripts": {
     "lint": "featurevisor lint",
