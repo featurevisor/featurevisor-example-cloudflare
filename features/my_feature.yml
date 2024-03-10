@@ -1,8 +1,8 @@
-description: Classic on/off switch
+description: Classic on/off switch purely for testing purposes
 tags:
   - all
 
-bucketBy: userId
+bucketBy: deviceId
 
 environments:
   staging:
