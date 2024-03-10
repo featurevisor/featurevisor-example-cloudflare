@@ -22,21 +22,18 @@ jobs:
         run: npm ci
 
       - name: Lint YAMLs
-        run: npm run lint
+        run: npx featurevisor lint
+
+      - name: Test specs
+        run: npx featurevisor test
+
+      - name: Build
+        run: npx featurevisor build
 
       - name: Git configs
         run: |
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-
-      - name: Version
-        run: npm version patch
-
-      - name: Build
-        run: npm run build
-
-      - name: Test specs
-        run: npm test
 
       - name: Upload to Cloudflare Pages
         run: |
@@ -49,5 +46,5 @@ jobs:
       - name: Push back to origin
         run: |
           git add .featurevisor/*
-          git commit --amend --no-edit
+          git commit -m "[skip ci] Revision $(cat .featurevisor/REVISION)"
           git push

@@ -22,10 +22,10 @@ jobs:
         run: npm ci
 
       - name: Lint YAMLs
-        run: npm run lint
+        run: npx featurevisor lint
 
       - name: Build
-        run: npm run build
+        run: npx featurevisor build
 
       - name: Test specs
-        run: npm test
+        run: npx featurevisor test

@@ -11,7 +11,7 @@
     "start": "npm run export && featurevisor site serve"
   },
   "devDependencies": {
-    "@featurevisor/cli": "^0.44.1",
+    "@featurevisor/cli": "^1.11.0",
     "wrangler": "^3.0.0"
   }
 }
