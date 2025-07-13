@@ -8,8 +8,8 @@ For more documentation, visit https://featurevisor.com.
 
 The generated datafiles from this repository is accessible via these URLs:
 
-- `production`: https://featurevisor-example-cloudflare.pages.dev/production/datafile-tag-all.json
-- `staging`: https://featurevisor-example-cloudflare.pages.dev/staging/datafile-tag-all.json
+- `production`: https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-tag-all.json
+- `staging`: https://featurevisor-example-cloudflare.pages.dev/staging/featurevisor-tag-all.json
 
 ### Usage with Featurevisor SDK
 
@@ -25,7 +25,7 @@ Then use it in your application:
 import { createInstance } from "@featurevisor/sdk";
 
 const DATAFILE_URL =
-  "https://featurevisor-example-cloudflare.pages.dev/production/datafile-tag-all.json";
+  "https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-tag-all.json";
 
 const datafileContent = await fetch(DATAFILE_URL).then((res) => res.json());
 
