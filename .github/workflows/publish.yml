@@ -37,8 +37,8 @@ jobs:
 
       - name: Upload to Cloudflare Pages
         run: |
-          echo "<html><body>It works.</body></html>" > dist/index.html
-          npx wrangler pages deploy dist --project-name="featurevisor-example-cloudflare"
+          echo "<html><body>It works.</body></html>" > datafiles/index.html
+          npx wrangler pages deploy datafiles --project-name="featurevisor-example-cloudflare"
         env:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
