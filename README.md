@@ -22,16 +22,23 @@ $ npm install --save @featurevisor/sdk
 Then use it in your application:
 
 ```js
-import { createInstance } from '@featurevisor/sdk';
+import { createInstance } from "@featurevisor/sdk";
+
+const DATAFILE_URL =
+  "https://featurevisor-example-cloudflare.pages.dev/production/datafile-tag-all.json";
+
+const datafileContent = await fetch(DATAFILE_URL).then((res) => res.json());
 
 const sdk = createInstance({
-  datafileUrl: 'https://featurevisor-example-cloudflare.pages.dev/production/datafile-tag-all.json',
+  datafile: datafileContent,
 });
 ```
 
+Learn more about [SDK usage here](https://featurevisor.com/docs/sdks/javascript/).
+
 ## Installation
 
-Since this example app lives outside of the Featurevisor [monorepo](https://github.com/fahad19/featurevisor), you are recommended to make sure [`package.json`](./package.json) has the latest version of [`@featurevisor/cli`](https://www.npmjs.com/package/@featurevisor/cli) package.
+Since this example app lives outside of the Featurevisor [monorepo](https://github.com/featurevisor/featurevisor), you are recommended to make sure [`package.json`](./package.json) has the latest version of [`@featurevisor/cli`](https://www.npmjs.com/package/@featurevisor/cli) package.
 
 ```
 $ npm ci
@@ -42,19 +49,21 @@ $ npm ci
 ### Lint YAMLs
 
 ```
-$ npm run lint
+$ npx featurevisor lint
 ```
 
 ### Build datafiles
 
 ```
-$ npm run build
+$ npx featurevisor build
 ```
+
+Checkout output in `datafiles` directory.
 
 ### Test features
 
 ```
-$ npm test
+$ npx featurevisor test
 ```
 
 ## Cloudflare
