@@ -3,20 +3,20 @@
     "baz": {
       "traffic": [
         {
-          "key": "1",
-          "percentage": 100000,
-          "allocation": []
+          "key": "everyone",
+          "percentage": 100000
         }
-      ]
+      ],
+      "hash": "8gc124PXnz"
     },
     "my_feature": {
       "traffic": [
         {
-          "key": "1",
-          "percentage": 100000,
-          "allocation": []
+          "key": "everyone",
+          "percentage": 100000
         }
-      ]
+      ],
+      "hash": "muDJuV9wLr"
     }
   }
 }
