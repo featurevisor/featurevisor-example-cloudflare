@@ -47,13 +47,13 @@ npm ci
 ### Lint YAMLs
 
 ```sh
-npm run lint
+npx featurevisor lint
 ```
 
 ### Build datafiles
 
 ```sh
-npm run build
+npx featurevisor build
 ```
 
 Review the output in the `datafiles` directory.
@@ -61,13 +61,13 @@ Review the output in the `datafiles` directory.
 ### Test features
 
 ```sh
-npm test
+npx featurevisor test
 ```
 
 ### Explore the Catalog
 
 ```sh
-npm start
+npx featurevisor catalog
 ```
 
 ## Cloudflare
