@@ -7,11 +7,11 @@
     "lint": "featurevisor lint",
     "build": "featurevisor build",
     "test": "featurevisor test",
-    "export": "featurevisor site export",
-    "start": "npm run export && featurevisor site serve"
+    "export": "featurevisor catalog export",
+    "start": "npm run export && featurevisor catalog serve"
   },
   "devDependencies": {
-    "@featurevisor/cli": "^3.0.1",
-    "wrangler": "^4.24.3"
+    "@featurevisor/cli": "^3.2.0",
+    "wrangler": "^4.114.0"
   }
 }
