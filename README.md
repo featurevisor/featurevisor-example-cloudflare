@@ -11,6 +11,11 @@ The generated target datafiles from this repository are available at these URLs:
 - `production`: https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-tag-all.json
 - `staging`: https://featurevisor-example-cloudflare.pages.dev/staging/featurevisor-tag-all.json
 
+The smaller mobile target is intended for the native iOS and Android examples:
+
+- `production`: https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-mobile.json
+- `staging`: https://featurevisor-example-cloudflare.pages.dev/staging/featurevisor-mobile.json
+
 ### Usage with Featurevisor SDK
 
 Install the SDK in your application:

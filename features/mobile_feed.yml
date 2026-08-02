@@ -1,0 +1,74 @@
+description: Mobile feed rollout with primitive and structured variables
+tags:
+  - all
+  - mobile
+
+bucketBy: userId
+
+variablesSchema:
+  page_size:
+    type: integer
+    defaultValue: 10
+  layout:
+    type: string
+    defaultValue: compact
+  sections:
+    type: array
+    items:
+      type: string
+    defaultValue:
+      - news
+  card_style:
+    type: object
+    properties:
+      cornerRadius:
+        type: integer
+      showImage:
+        type: boolean
+    required:
+      - cornerRadius
+      - showImage
+    defaultValue:
+      cornerRadius: 8
+      showImage: false
+
+variations:
+  - value: compact
+    weight: 50
+    variables:
+      page_size: 10
+      layout: compact
+      sections:
+        - news
+      card_style:
+        cornerRadius: 8
+        showImage: false
+
+  - value: rich
+    weight: 50
+    variables:
+      page_size: 20
+      layout: cards
+      sections:
+        - featured
+        - news
+        - recommended
+      card_style:
+        cornerRadius: 16
+        showImage: true
+
+rules:
+  staging:
+    - key: everyone
+      segments: "*"
+      percentage: 100
+
+  production:
+    - key: supported-apps
+      segments: supportedMobileApp
+      percentage: 100
+
+    - key: older-apps
+      segments: "*"
+      percentage: 25
+      variation: compact

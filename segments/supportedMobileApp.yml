@@ -1,0 +1,6 @@
+description: Mobile application versions receiving the complete feed experience
+conditions:
+  - attribute: appVersion
+    operator: semverGreaterThanOrEquals
+    value: 2.0.0
+

@@ -1,0 +1,31 @@
+feature: mobile_theme
+assertions:
+  - matrix:
+      environment:
+        - staging
+        - production
+    at: 25
+    description: The first half receives the light theme in ${{ environment }}
+    environment: ${{ environment }}
+    target: mobile
+    expectedToBeEnabled: true
+    expectedVariation: light
+    expectedVariables:
+      background_color: "#fffdf8"
+      font_scale: 1.05
+      use_system_theme: true
+
+  - matrix:
+      environment:
+        - staging
+        - production
+    at: 75
+    description: The second half receives the contrast theme in ${{ environment }}
+    environment: ${{ environment }}
+    target: mobile
+    expectedToBeEnabled: true
+    expectedVariation: contrast
+    expectedVariables:
+      background_color: "#18212f"
+      font_scale: 1.15
+      use_system_theme: false

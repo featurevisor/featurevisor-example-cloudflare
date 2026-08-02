@@ -1,0 +1,35 @@
+feature: mobile_experience
+assertions:
+  - matrix:
+      environment:
+        - staging
+        - production
+    description: Netherlands receives the localized treatment in ${{ environment }}
+    at: 50
+    environment: ${{ environment }}
+    target: mobile
+    context:
+      userId: mobile-user
+      country: nl
+    expectedToBeEnabled: true
+    expectedVariation: treatment
+    expectedVariables:
+      welcome_message: Welkom
+      show_new_navigation: true
+
+  - matrix:
+      environment:
+        - staging
+        - production
+    description: Germany receives the control experience in ${{ environment }}
+    at: 50
+    environment: ${{ environment }}
+    target: mobile
+    context:
+      userId: mobile-user
+      country: de
+    expectedToBeEnabled: true
+    expectedVariation: control
+    expectedVariables:
+      welcome_message: Welcome
+      show_new_navigation: false
