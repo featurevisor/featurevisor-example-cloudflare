@@ -10,10 +10,6 @@ assertions:
     target: mobile
     expectedToBeEnabled: true
     expectedVariation: light
-    expectedVariables:
-      background_color: "#fffdf8"
-      font_scale: 1.05
-      use_system_theme: true
 
   - matrix:
       environment:
@@ -25,7 +21,3 @@ assertions:
     target: mobile
     expectedToBeEnabled: true
     expectedVariation: contrast
-    expectedVariables:
-      background_color: "#18212f"
-      font_scale: 1.15
-      use_system_theme: false

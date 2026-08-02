@@ -1,35 +1,16 @@
-description: Theme experiment with several typed configuration values
+description: Theme experiment demonstrating variations without variables
 tags:
   - all
   - mobile
 
 bucketBy: userId
 
-variablesSchema:
-  background_color:
-    type: string
-    defaultValue: "#fffdf8"
-  font_scale:
-    type: double
-    defaultValue: 1.05
-  use_system_theme:
-    type: boolean
-    defaultValue: true
-
 variations:
   - value: light
     weight: 50
-    variables:
-      background_color: "#fffdf8"
-      font_scale: 1.05
-      use_system_theme: true
 
   - value: contrast
     weight: 50
-    variables:
-      background_color: "#18212f"
-      font_scale: 1.15
-      use_system_theme: false
 
 rules:
   staging:
@@ -41,4 +22,3 @@ rules:
     - key: everyone
       segments: "*"
       percentage: 100
-

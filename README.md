@@ -16,6 +16,12 @@ The smaller mobile target is intended for the native iOS and Android examples:
 - `production`: https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-mobile.json
 - `staging`: https://featurevisor-example-cloudflare.pages.dev/staging/featurevisor-mobile.json
 
+The mobile target contains three focused examples:
+
+- `mobile_theme` demonstrates variations only.
+- `mobile_feed` demonstrates variables only.
+- `mobile_experience` demonstrates variations and variables together.
+
 ### Usage with Featurevisor SDK
 
 Install the SDK in your application:
