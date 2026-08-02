@@ -17,6 +17,89 @@
         }
       ],
       "hash": "muDJuV9wLr"
+    },
+    "mobile_experience": {
+      "variations": [
+        {
+          "value": "control",
+          "weight": 50
+        },
+        {
+          "value": "treatment",
+          "weight": 50
+        }
+      ],
+      "traffic": [
+        {
+          "key": "everyone",
+          "percentage": 100000,
+          "allocation": [
+            {
+              "variation": "control",
+              "range": [
+                0,
+                50000
+              ]
+            },
+            {
+              "variation": "treatment",
+              "range": [
+                50000,
+                100000
+              ]
+            }
+          ]
+        }
+      ],
+      "hash": "VY7LVbM5cG"
+    },
+    "mobile_feed": {
+      "traffic": [
+        {
+          "key": "supported-apps",
+          "percentage": 100000
+        },
+        {
+          "key": "older-apps",
+          "percentage": 25000
+        }
+      ],
+      "hash": "UxSC0lb2VE"
+    },
+    "mobile_theme": {
+      "variations": [
+        {
+          "value": "light",
+          "weight": 50
+        },
+        {
+          "value": "contrast",
+          "weight": 50
+        }
+      ],
+      "traffic": [
+        {
+          "key": "everyone",
+          "percentage": 100000,
+          "allocation": [
+            {
+              "variation": "light",
+              "range": [
+                0,
+                50000
+              ]
+            },
+            {
+              "variation": "contrast",
+              "range": [
+                50000,
+                100000
+              ]
+            }
+          ]
+        }
+      ],
+      "hash": "RXTQul8KCB"
     }
   }
 }
