@@ -1,0 +1,59 @@
+feature: mobile_feed
+assertions:
+  - at: 25
+    description: Staging serves the compact feed to all application versions
+    environment: staging
+    target: mobile
+    context:
+      appVersion: 1.5.0
+    expectedToBeEnabled: true
+    expectedVariables:
+      page_size: 10
+      layout: compact
+      sections:
+        - news
+      card_style:
+        cornerRadius: 8
+        showImage: false
+
+  - at: 75
+    description: Supported production applications receive the rich feed
+    environment: production
+    target: mobile
+    context:
+      appVersion: 2.0.0
+    expectedToBeEnabled: true
+    expectedVariables:
+      page_size: 20
+      layout: cards
+      sections:
+        - featured
+        - news
+        - recommended
+      card_style:
+        cornerRadius: 16
+        showImage: true
+
+  - at: 20
+    description: Older production applications remain in the gradual rollout
+    environment: production
+    target: mobile
+    context:
+      appVersion: 1.5.0
+    expectedToBeEnabled: true
+    expectedVariables:
+      page_size: 10
+      layout: compact
+      sections:
+        - news
+      card_style:
+        cornerRadius: 8
+        showImage: false
+
+  - at: 30
+    description: Older production applications outside the rollout are disabled
+    environment: production
+    target: mobile
+    context:
+      appVersion: 1.5.0
+    expectedToBeEnabled: false

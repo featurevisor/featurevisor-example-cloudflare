@@ -1,0 +1,24 @@
+description: Theme experiment demonstrating variations without variables
+tags:
+  - all
+  - mobile
+
+bucketBy: userId
+
+variations:
+  - value: light
+    weight: 50
+
+  - value: contrast
+    weight: 50
+
+rules:
+  staging:
+    - key: everyone
+      segments: "*"
+      percentage: 100
+
+  production:
+    - key: everyone
+      segments: "*"
+      percentage: 100
