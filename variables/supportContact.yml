@@ -1,0 +1,24 @@
+description: Localized support contact
+tags:
+  - sdk-v3
+
+type: string
+defaultValue: support@example.com
+
+overrides:
+  staging:
+    - key: staging
+      segments: "*"
+      value: support-staging@example.com
+
+  production:
+    - key: dutch
+      conditions:
+        attribute: locale
+        operator: equals
+        value: nl-NL
+      value: support-nl@example.com
+
+    - key: default
+      segments: "*"
+      value: support@example.com

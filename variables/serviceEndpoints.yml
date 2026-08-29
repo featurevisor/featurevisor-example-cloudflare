@@ -1,0 +1,55 @@
+description: Service endpoints with regional and account specific refinements
+tags:
+  - sdk-v3
+
+type: object
+properties:
+  baseUrl:
+    type: string
+  timeoutMs:
+    type: integer
+  retries:
+    type: integer
+required:
+  - baseUrl
+  - timeoutMs
+  - retries
+
+defaultValue:
+  baseUrl: https://api.example.com
+  timeoutMs: 3000
+  retries: 2
+
+overrides:
+  staging:
+    - key: staging
+      segments: "*"
+      mutate:
+        baseUrl: https://api.staging.example.com
+        timeoutMs: 5000
+
+  production:
+    - key: europe
+      conditions:
+        attribute: country
+        operator: in
+        value:
+          - nl
+          - de
+          - fr
+      mutate:
+        baseUrl: https://api.eu.example.com
+        timeoutMs: 2500
+      overrides:
+        - key: premium
+          segments: premiumAccounts
+          mutate:
+            timeoutMs: 1200
+            retries: 4
+
+    - key: default
+      segments: "*"
+      value:
+        baseUrl: https://api.example.com
+        timeoutMs: 3000
+        retries: 2

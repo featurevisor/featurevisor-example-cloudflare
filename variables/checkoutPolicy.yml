@@ -1,0 +1,63 @@
+description: Shared checkout policy controlled by feature requirements
+tags:
+  - sdk-v3
+
+type: object
+
+properties:
+  currency:
+    type: string
+  maxOrderValue:
+    type: integer
+  allowGuest:
+    type: boolean
+
+required:
+  - currency
+  - maxOrderValue
+  - allowGuest
+
+defaultValue:
+  currency: EUR
+  maxOrderValue: 500
+  allowGuest: true
+
+disabledValue:
+  currency: EUR
+  maxOrderValue: 0
+  allowGuest: false
+
+requiredFeatures: commerce_platform
+
+overrides:
+  staging:
+    - key: staging
+      segments: "*"
+      mutate:
+        maxOrderValue: 1000
+
+  production:
+    - key: premium-express
+      segments: premiumAccounts
+      requiredFeatures:
+        - feature: checkout_experience
+          enabled: true
+          variation: express
+      mutate:
+        maxOrderValue: 2500
+        allowGuest: false
+
+    - key: netherlands
+      conditions:
+        attribute: country
+        operator: equals
+        value: nl
+      mutate:
+        maxOrderValue: 1500
+
+    - key: default
+      segments: "*"
+      value:
+        currency: EUR
+        maxOrderValue: 500
+        allowGuest: true

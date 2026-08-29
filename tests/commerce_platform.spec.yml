@@ -1,0 +1,37 @@
+feature: commerce_platform
+assertions:
+  - description: Staging enables the commerce foundation for everyone
+    environment: staging
+    target: sdk-v3
+    at: 95
+    context:
+      userId: staging-user
+      accountPlan: free
+    expectedToBeEnabled: true
+
+  - description: Production includes free accounts inside the gradual rollout
+    environment: production
+    target: sdk-v3
+    at: 50
+    context:
+      userId: free-user
+      accountPlan: free
+    expectedToBeEnabled: true
+
+  - description: Production excludes free accounts outside the gradual rollout
+    environment: production
+    target: sdk-v3
+    at: 90
+    context:
+      userId: free-user
+      accountPlan: free
+    expectedToBeEnabled: false
+
+  - description: Premium accounts receive the complete production rollout
+    environment: production
+    target: sdk-v3
+    at: 99
+    context:
+      userId: premium-user
+      accountPlan: pro
+    expectedToBeEnabled: true

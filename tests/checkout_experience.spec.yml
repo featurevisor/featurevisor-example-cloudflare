@@ -1,0 +1,64 @@
+feature: checkout_experience
+assertions:
+  - description: Staging exposes the standard checkout to free accounts
+    environment: staging
+    target: sdk-v3
+    at: 25
+    context:
+      userId: staging-user
+      accountPlan: free
+      country: us
+    expectedToBeEnabled: true
+    expectedVariation: standard
+    expectedVariables:
+      checkout_mode: standard
+      max_items: 10
+      payment_methods:
+        - card
+      presentation:
+        accent: blue
+        showProgress: false
+
+  - description: Premium production accounts receive the express variation
+    environment: production
+    target: sdk-v3
+    at: 75
+    context:
+      userId: premium-user
+      accountPlan: enterprise
+      country: us
+    expectedToBeEnabled: true
+    expectedVariation: express
+    expectedVariables:
+      checkout_mode: express
+      max_items: 25
+      payment_methods:
+        - card
+        - wallet
+      presentation:
+        accent: green
+        showProgress: true
+
+  - description: Netherlands receives the forced express variation
+    environment: production
+    target: sdk-v3
+    at: 50
+    context:
+      userId: dutch-user
+      accountPlan: free
+      country: nl
+    expectedToBeEnabled: true
+    expectedVariation: express
+
+  - description: An unmet required feature disables the checkout
+    environment: production
+    target: sdk-v3
+    at: 90
+    context:
+      userId: free-user
+      accountPlan: free
+      country: us
+    expectedToBeEnabled: false
+    expectedEvaluations:
+      flag:
+        reason: required

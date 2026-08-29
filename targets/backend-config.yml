@@ -1,0 +1,8 @@
+description: Focused backend configuration without the checkout experiment
+
+includeFeatures:
+  - commerce_platform
+
+includeVariables:
+  - serviceEndpoints
+  - supportContact

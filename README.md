@@ -22,6 +22,26 @@ The mobile target contains three focused examples:
 - `mobile_feed` demonstrates variables only.
 - `mobile_experience` demonstrates variations and variables together.
 
+The Featurevisor v3 showcase is intended for SDK examples that need richer
+evaluation cases:
+
+- `production`: https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-sdk-v3.json
+- `staging`: https://featurevisor-example-cloudflare.pages.dev/staging/featurevisor-sdk-v3.json
+
+It includes:
+
+- `commerce_platform`, a gradual flag rollout;
+- `checkout_experience`, with a required feature, variations, variables, forces, and rules;
+- `serviceEndpoints`, with nested global variable overrides;
+- `checkoutPolicy`, with feature requirements and conditional overrides;
+- `supportContact`, a small localized global variable.
+
+The smaller backend target contains the commerce foundation and selected global
+configuration without the checkout experiment:
+
+- `production`: https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-backend-config.json
+- `staging`: https://featurevisor-example-cloudflare.pages.dev/staging/featurevisor-backend-config.json
+
 ### Usage with Featurevisor SDK
 
 Install the SDK in your application:

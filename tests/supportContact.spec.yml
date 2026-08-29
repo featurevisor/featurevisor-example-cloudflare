@@ -1,0 +1,37 @@
+variable: supportContact
+assertions:
+  - description: Staging uses the staging support address
+    environment: staging
+    target: sdk-v3
+    expectedValue: support-staging@example.com
+    expectedEvaluation:
+      variableOverrideKey: staging
+
+  - description: Dutch locale uses the localized production address
+    environment: production
+    target: sdk-v3
+    context:
+      locale: nl-NL
+    expectedValue: support-nl@example.com
+    expectedEvaluation:
+      variableOverrideKey: dutch
+
+  - description: Other locales use the production catch-all address
+    environment: production
+    target: backend-config
+    context:
+      locale: en-US
+    expectedValue: support@example.com
+    expectedEvaluation:
+      variableOverrideKey: default
+
+  - description: Sticky global variables take precedence over overrides
+    environment: production
+    target: sdk-v3
+    stickyVariables:
+      supportContact: sticky-support@example.com
+    context:
+      locale: nl-NL
+    expectedValue: sticky-support@example.com
+    expectedEvaluation:
+      reason: sticky
