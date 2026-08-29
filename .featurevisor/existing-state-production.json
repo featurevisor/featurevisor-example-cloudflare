@@ -7,7 +7,7 @@
           "percentage": 80000
         }
       ],
-      "hash": "7QNc4DGMCn"
+      "hash": "KLnWxIq3q9"
     },
     "my_feature": {
       "traffic": [
@@ -16,7 +16,7 @@
           "percentage": 100000
         }
       ],
-      "hash": "muDJuV9wLr"
+      "hash": "IatGRKrgIU"
     },
     "mobile_experience": {
       "variations": [
@@ -51,7 +51,7 @@
           ]
         }
       ],
-      "hash": "VY7LVbM5cG"
+      "hash": "cqWJ0DQuFm"
     },
     "mobile_feed": {
       "traffic": [
@@ -64,7 +64,7 @@
           "percentage": 25000
         }
       ],
-      "hash": "UxSC0lb2VE"
+      "hash": "uI60UvnAhH"
     },
     "mobile_theme": {
       "variations": [
@@ -99,7 +99,75 @@
           ]
         }
       ],
-      "hash": "RXTQul8KCB"
+      "hash": "VDKsNyx0dK"
+    },
+    "checkout_experience": {
+      "variations": [
+        {
+          "value": "standard",
+          "weight": 50
+        },
+        {
+          "value": "express",
+          "weight": 50
+        }
+      ],
+      "traffic": [
+        {
+          "key": "premium-accounts",
+          "percentage": 100000,
+          "allocation": [
+            {
+              "variation": "standard",
+              "range": [
+                0,
+                50000
+              ]
+            },
+            {
+              "variation": "express",
+              "range": [
+                50000,
+                100000
+              ]
+            }
+          ]
+        },
+        {
+          "key": "gradual-rollout",
+          "percentage": 70000,
+          "allocation": [
+            {
+              "variation": "standard",
+              "range": [
+                0,
+                35000
+              ]
+            },
+            {
+              "variation": "express",
+              "range": [
+                35000,
+                70000
+              ]
+            }
+          ]
+        }
+      ],
+      "hash": "G8x8YLBx4S"
+    },
+    "commerce_platform": {
+      "traffic": [
+        {
+          "key": "premium-accounts",
+          "percentage": 100000
+        },
+        {
+          "key": "gradual-rollout",
+          "percentage": 80000
+        }
+      ],
+      "hash": "QbyP3IoHAA"
     }
   }
 }

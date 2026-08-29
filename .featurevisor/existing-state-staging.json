@@ -7,7 +7,7 @@
           "percentage": 100000
         }
       ],
-      "hash": "8gc124PXnz"
+      "hash": "EDL734Y34P"
     },
     "my_feature": {
       "traffic": [
@@ -16,7 +16,7 @@
           "percentage": 100000
         }
       ],
-      "hash": "muDJuV9wLr"
+      "hash": "IatGRKrgIU"
     },
     "mobile_experience": {
       "variations": [
@@ -51,7 +51,7 @@
           ]
         }
       ],
-      "hash": "VY7LVbM5cG"
+      "hash": "cqWJ0DQuFm"
     },
     "mobile_feed": {
       "traffic": [
@@ -60,7 +60,7 @@
           "percentage": 100000
         }
       ],
-      "hash": "cxDRa165VP"
+      "hash": "f4ZqBF7ZCX"
     },
     "mobile_theme": {
       "variations": [
@@ -95,7 +95,51 @@
           ]
         }
       ],
-      "hash": "RXTQul8KCB"
+      "hash": "VDKsNyx0dK"
+    },
+    "checkout_experience": {
+      "variations": [
+        {
+          "value": "standard",
+          "weight": 50
+        },
+        {
+          "value": "express",
+          "weight": 50
+        }
+      ],
+      "traffic": [
+        {
+          "key": "everyone",
+          "percentage": 100000,
+          "allocation": [
+            {
+              "variation": "standard",
+              "range": [
+                0,
+                50000
+              ]
+            },
+            {
+              "variation": "express",
+              "range": [
+                50000,
+                100000
+              ]
+            }
+          ]
+        }
+      ],
+      "hash": "UFBuMyvxYa"
+    },
+    "commerce_platform": {
+      "traffic": [
+        {
+          "key": "everyone",
+          "percentage": 100000
+        }
+      ],
+      "hash": "EkRecbzeZr"
     }
   }
 }
