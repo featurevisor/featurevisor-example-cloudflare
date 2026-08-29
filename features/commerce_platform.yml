@@ -1,0 +1,37 @@
+description: Foundation for the commerce experience
+tags:
+  - sdk-v3
+
+bucketBy: userId
+
+force:
+  production:
+    - conditions:
+        - attribute: accountPlan
+          operator: equals
+          value: disabled
+      enabled: false
+
+    - segments: premiumAccounts
+      enabled: true
+
+    - conditions:
+        - attribute: country
+          operator: equals
+          value: nl
+      enabled: true
+
+rules:
+  staging:
+    - key: everyone
+      segments: "*"
+      percentage: 100
+
+  production:
+    - key: premium-accounts
+      segments: premiumAccounts
+      percentage: 100
+
+    - key: gradual-rollout
+      segments: "*"
+      percentage: 80

@@ -1,5 +1,5 @@
 module.exports = {
   environments: ["staging", "production"],
-  tags: ["all", "mobile"],
+  tags: ["all", "mobile", "sdk-v3"],
   prettyState: true,
 };

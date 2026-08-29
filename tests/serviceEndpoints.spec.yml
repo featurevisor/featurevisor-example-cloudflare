@@ -1,0 +1,57 @@
+variable: serviceEndpoints
+assertions:
+  - description: Staging uses its own endpoint and keeps the default retries
+    environment: staging
+    target: sdk-v3
+    context:
+      accountPlan: free
+      country: us
+    expectedValue:
+      baseUrl: https://api.staging.example.com
+      timeoutMs: 5000
+      retries: 2
+    expectedEvaluation:
+      variableOverrideKey: staging
+
+  - description: European free accounts use the regional endpoint
+    environment: production
+    target: sdk-v3
+    context:
+      accountPlan: free
+      country: nl
+    expectedValue:
+      baseUrl: https://api.eu.example.com
+      timeoutMs: 2500
+      retries: 2
+    expectedEvaluation:
+      variableOverrideKey: europe
+
+  - description: European premium accounts apply the nested refinement
+    environment: production
+    target: sdk-v3
+    context:
+      accountPlan: pro
+      country: de
+    expectedValue:
+      baseUrl: https://api.eu.example.com
+      timeoutMs: 1200
+      retries: 4
+    expectedEvaluation:
+      reason: variable_override_rule
+      variableOverrideKey: premium
+      variableOverridePath:
+        - europe
+        - premium
+
+  - description: Other regions use the complete catch-all value
+    environment: production
+    target: backend-config
+    context:
+      accountPlan: free
+      country: us
+    expectedValue:
+      baseUrl: https://api.example.com
+      timeoutMs: 3000
+      retries: 2
+    expectedEvaluation:
+      variableOverrideKey: default

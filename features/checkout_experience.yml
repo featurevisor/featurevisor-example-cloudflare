@@ -1,0 +1,91 @@
+description: Checkout experiment with variations, variables, and a required feature
+tags:
+  - sdk-v3
+
+bucketBy: userId
+
+requiredFeatures: commerce_platform
+
+variablesSchema:
+  checkout_mode:
+    type: string
+    defaultValue: standard
+  max_items:
+    type: integer
+    defaultValue: 10
+  payment_methods:
+    type: array
+    items:
+      type: string
+    defaultValue:
+      - card
+  presentation:
+    type: object
+    properties:
+      accent:
+        type: string
+      showProgress:
+        type: boolean
+    required:
+      - accent
+      - showProgress
+    defaultValue:
+      accent: blue
+      showProgress: false
+
+variations:
+  - value: standard
+    weight: 50
+    variables:
+      checkout_mode: standard
+      max_items: 10
+      payment_methods:
+        - card
+      presentation:
+        accent: blue
+        showProgress: false
+
+  - value: express
+    weight: 50
+    variables:
+      checkout_mode: express
+      max_items: 25
+      payment_methods:
+        - card
+        - wallet
+      presentation:
+        accent: green
+        showProgress: true
+
+force:
+  staging:
+    - segments: premiumAccounts
+      enabled: true
+      variation: express
+
+  production:
+    - segments: premiumAccounts
+      enabled: true
+      variation: express
+
+    - conditions:
+        - attribute: country
+          operator: equals
+          value: nl
+      enabled: true
+      variation: express
+
+rules:
+  staging:
+    - key: everyone
+      segments: "*"
+      percentage: 100
+
+  production:
+    - key: premium-accounts
+      segments: premiumAccounts
+      percentage: 100
+
+    - key: gradual-rollout
+      segments: "*"
+      percentage: 70

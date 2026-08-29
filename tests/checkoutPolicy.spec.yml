@@ -1,0 +1,57 @@
+variable: checkoutPolicy
+assertions:
+  - description: Staging raises the default order limit
+    environment: staging
+    target: sdk-v3
+    context:
+      userId: staging-user
+      accountPlan: free
+      country: us
+    expectedValue:
+      currency: EUR
+      maxOrderValue: 1000
+      allowGuest: true
+    expectedEvaluation:
+      variableOverrideKey: staging
+
+  - description: Premium express checkout receives the expanded policy
+    environment: production
+    target: sdk-v3
+    context:
+      userId: premium-user
+      accountPlan: enterprise
+      country: us
+    expectedValue:
+      currency: EUR
+      maxOrderValue: 2500
+      allowGuest: false
+    expectedEvaluation:
+      variableOverrideKey: premium-express
+
+  - description: Netherlands receives its localized order limit
+    environment: production
+    target: sdk-v3
+    context:
+      userId: dutch-user
+      accountPlan: free
+      country: nl
+    expectedValue:
+      currency: EUR
+      maxOrderValue: 1500
+      allowGuest: true
+    expectedEvaluation:
+      variableOverrideKey: netherlands
+
+  - description: An unmet root requirement returns the disabled value
+    environment: production
+    target: sdk-v3
+    context:
+      userId: disabled-user
+      accountPlan: disabled
+      country: us
+    expectedValue:
+      currency: EUR
+      maxOrderValue: 0
+      allowGuest: false
+    expectedEvaluation:
+      reason: required_features_unmet

@@ -1,0 +1,7 @@
+description: Customers on a paid account plan
+conditions:
+  - attribute: accountPlan
+    operator: in
+    value:
+      - pro
+      - enterprise
