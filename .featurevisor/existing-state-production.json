@@ -1,24 +1,25 @@
 {
   "features": {
     "baz": {
+      "hash": "WItHqUwOVW",
       "traffic": [
         {
           "key": "everyone",
           "percentage": 80000
         }
-      ],
-      "hash": "KLnWxIq3q9"
+      ]
     },
     "my_feature": {
+      "hash": "HtM9Qf6i6F",
       "traffic": [
         {
           "key": "everyone",
           "percentage": 100000
         }
-      ],
-      "hash": "IatGRKrgIU"
+      ]
     },
     "mobile_experience": {
+      "hash": "8f80VHPcQw",
       "variations": [
         {
           "value": "control",
@@ -50,10 +51,10 @@
             }
           ]
         }
-      ],
-      "hash": "cqWJ0DQuFm"
+      ]
     },
     "mobile_feed": {
+      "hash": "eFrHeJZdAU",
       "traffic": [
         {
           "key": "supported-apps",
@@ -63,10 +64,10 @@
           "key": "older-apps",
           "percentage": 25000
         }
-      ],
-      "hash": "uI60UvnAhH"
+      ]
     },
     "mobile_theme": {
+      "hash": "nn0TIbvoxA",
       "variations": [
         {
           "value": "light",
@@ -98,10 +99,10 @@
             }
           ]
         }
-      ],
-      "hash": "VDKsNyx0dK"
+      ]
     },
     "checkout_experience": {
+      "hash": "wbfAMUDpjl",
       "variations": [
         {
           "value": "standard",
@@ -153,10 +154,10 @@
             }
           ]
         }
-      ],
-      "hash": "G8x8YLBx4S"
+      ]
     },
     "commerce_platform": {
+      "hash": "a1HRABQXMh",
       "traffic": [
         {
           "key": "premium-accounts",
@@ -166,8 +167,7 @@
           "key": "gradual-rollout",
           "percentage": 80000
         }
-      ],
-      "hash": "QbyP3IoHAA"
+      ]
     }
   }
 }

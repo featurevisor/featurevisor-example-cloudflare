@@ -1,24 +1,25 @@
 {
   "features": {
     "baz": {
+      "hash": "u5x4RaGkEP",
       "traffic": [
         {
           "key": "everyone",
           "percentage": 100000
         }
-      ],
-      "hash": "EDL734Y34P"
+      ]
     },
     "my_feature": {
+      "hash": "HtM9Qf6i6F",
       "traffic": [
         {
           "key": "everyone",
           "percentage": 100000
         }
-      ],
-      "hash": "IatGRKrgIU"
+      ]
     },
     "mobile_experience": {
+      "hash": "8f80VHPcQw",
       "variations": [
         {
           "value": "control",
@@ -50,19 +51,19 @@
             }
           ]
         }
-      ],
-      "hash": "cqWJ0DQuFm"
+      ]
     },
     "mobile_feed": {
+      "hash": "WtNAmSBJq5",
       "traffic": [
         {
           "key": "everyone",
           "percentage": 100000
         }
-      ],
-      "hash": "f4ZqBF7ZCX"
+      ]
     },
     "mobile_theme": {
+      "hash": "nn0TIbvoxA",
       "variations": [
         {
           "value": "light",
@@ -94,10 +95,10 @@
             }
           ]
         }
-      ],
-      "hash": "VDKsNyx0dK"
+      ]
     },
     "checkout_experience": {
+      "hash": "OKN2FC9eMh",
       "variations": [
         {
           "value": "standard",
@@ -129,17 +130,16 @@
             }
           ]
         }
-      ],
-      "hash": "UFBuMyvxYa"
+      ]
     },
     "commerce_platform": {
+      "hash": "9y1fTOgAyK",
       "traffic": [
         {
           "key": "everyone",
           "percentage": 100000
         }
-      ],
-      "hash": "EkRecbzeZr"
+      ]
     }
   }
 }
