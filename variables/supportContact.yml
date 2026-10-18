@@ -8,7 +8,7 @@ defaultValue: support@example.com
 overrides:
   staging:
     - key: staging
-      segments: "*"
+      conditions: "*"
       value: support-staging@example.com
 
   production:
@@ -20,5 +20,5 @@ overrides:
       value: support-nl@example.com
 
     - key: default
-      segments: "*"
+      conditions: "*"
       value: support@example.com

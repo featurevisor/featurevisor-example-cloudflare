@@ -4,7 +4,8 @@ tags:
 
 bucketBy: userId
 
-requiredFeatures: commerce_platform
+conditions:
+  - feature: commerce_platform
 
 variablesSchema:
   checkout_mode:
@@ -59,12 +60,12 @@ variations:
 
 force:
   staging:
-    - segments: premiumAccounts
+    - conditions: premiumAccounts
       enabled: true
       variation: express
 
   production:
-    - segments: premiumAccounts
+    - conditions: premiumAccounts
       enabled: true
       variation: express
 
@@ -78,14 +79,14 @@ force:
 rules:
   staging:
     - key: everyone
-      segments: "*"
+      conditions: "*"
       percentage: 100
 
   production:
     - key: premium-accounts
-      segments: premiumAccounts
+      conditions: premiumAccounts
       percentage: 100
 
     - key: gradual-rollout
-      segments: "*"
+      conditions: "*"
       percentage: 70

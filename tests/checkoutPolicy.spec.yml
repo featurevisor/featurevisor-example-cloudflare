@@ -54,4 +54,4 @@ assertions:
       maxOrderValue: 0
       allowGuest: false
     expectedEvaluation:
-      reason: required_features_unmet
+      reason: conditions_unmet

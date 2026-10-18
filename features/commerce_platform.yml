@@ -12,7 +12,7 @@ force:
           value: disabled
       enabled: false
 
-    - segments: premiumAccounts
+    - conditions: premiumAccounts
       enabled: true
 
     - conditions:
@@ -24,14 +24,14 @@ force:
 rules:
   staging:
     - key: everyone
-      segments: "*"
+      conditions: "*"
       percentage: 100
 
   production:
     - key: premium-accounts
-      segments: premiumAccounts
+      conditions: premiumAccounts
       percentage: 100
 
     - key: gradual-rollout
-      segments: "*"
+      conditions: "*"
       percentage: 80

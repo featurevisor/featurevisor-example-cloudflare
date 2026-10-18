@@ -6,6 +6,8 @@ For more documentation, visit [featurevisor.com](https://featurevisor.com).
 
 ## Accessing datafiles
 
+These datafiles are built with Featurevisor v4, so applications need a v4 SDK to read them.
+
 The generated target datafiles from this repository are available at these URLs:
 
 - `production`: https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-tag-all.json
@@ -22,8 +24,8 @@ The mobile target contains three focused examples:
 - `mobile_feed` demonstrates variables only.
 - `mobile_experience` demonstrates variations and variables together.
 
-The Featurevisor v3 showcase is intended for SDK examples that need richer
-evaluation cases:
+The SDK showcase is intended for SDK examples that need richer evaluation cases.
+It keeps the `sdk-v3` name so existing URLs continue to work:
 
 - `production`: https://featurevisor-example-cloudflare.pages.dev/production/featurevisor-sdk-v3.json
 - `staging`: https://featurevisor-example-cloudflare.pages.dev/staging/featurevisor-sdk-v3.json
