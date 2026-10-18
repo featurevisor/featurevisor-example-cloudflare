@@ -35,12 +35,12 @@ variablesSchema:
 rules:
   staging:
     - key: everyone
-      segments: "*"
+      conditions: "*"
       percentage: 100
 
   production:
     - key: supported-apps
-      segments: supportedMobileApp
+      conditions: supportedMobileApp
       percentage: 100
       variables:
         page_size: 20
@@ -54,5 +54,5 @@ rules:
           showImage: true
 
     - key: older-apps
-      segments: "*"
+      conditions: "*"
       percentage: 25

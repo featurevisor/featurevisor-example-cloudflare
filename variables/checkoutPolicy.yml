@@ -27,19 +27,20 @@ disabledValue:
   maxOrderValue: 0
   allowGuest: false
 
-requiredFeatures: commerce_platform
+conditions:
+  - feature: commerce_platform
 
 overrides:
   staging:
     - key: staging
-      segments: "*"
+      conditions: "*"
       mutate:
         maxOrderValue: 1000
 
   production:
     - key: premium-express
-      segments: premiumAccounts
-      requiredFeatures:
+      conditions:
+        - premiumAccounts
         - feature: checkout_experience
           enabled: true
           variation: express
@@ -56,7 +57,7 @@ overrides:
         maxOrderValue: 1500
 
     - key: default
-      segments: "*"
+      conditions: "*"
       value:
         currency: EUR
         maxOrderValue: 500

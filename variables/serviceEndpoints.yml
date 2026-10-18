@@ -23,7 +23,7 @@ defaultValue:
 overrides:
   staging:
     - key: staging
-      segments: "*"
+      conditions: "*"
       mutate:
         baseUrl: https://api.staging.example.com
         timeoutMs: 5000
@@ -42,13 +42,13 @@ overrides:
         timeoutMs: 2500
       overrides:
         - key: premium
-          segments: premiumAccounts
+          conditions: premiumAccounts
           mutate:
             timeoutMs: 1200
             retries: 4
 
     - key: default
-      segments: "*"
+      conditions: "*"
       value:
         baseUrl: https://api.example.com
         timeoutMs: 3000

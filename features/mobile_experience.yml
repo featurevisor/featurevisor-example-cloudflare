@@ -28,7 +28,7 @@ variations:
 
 force:
   staging:
-    - segments: netherlands
+    - conditions: netherlands
       enabled: true
       variation: treatment
     - conditions:
@@ -39,7 +39,7 @@ force:
       variation: control
 
   production:
-    - segments: netherlands
+    - conditions: netherlands
       enabled: true
       variation: treatment
     - conditions:
@@ -52,11 +52,11 @@ force:
 rules:
   staging:
     - key: everyone
-      segments: "*"
+      conditions: "*"
       percentage: 100
 
   production:
     - key: everyone
-      segments: "*"
+      conditions: "*"
       percentage: 100
 
